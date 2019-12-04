@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host:     localhost
+  database: drone_planning_app
+  username: postgres
+  password: <%= ENV['DRONE_PLANNING_APP_DATABASE_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: drone_planning_app_development
+
+test:
+  <<: *default
+  database: drone_planning_app_test
+
+production:
+  <<: *default
+  database: drone_planning_app_production
