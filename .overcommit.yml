@@ -1,0 +1,14 @@
+PreCommit:
+  ALL:
+    exclude:
+      - 'public/**/*'
+      - 'node_modules/**/*'
+      - 'vendor/**/*'
+
+  SlimLint:
+    enabled: true
+    on_warn: pass
+    problem_on_unmodified_line: warn
+
+  TrailingWhitespace:
+    enabled: true
