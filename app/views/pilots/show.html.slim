@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong First name:
+  = @pilot.first_name
+p
+  strong Last name:
+  = @pilot.last_name
+p
+  strong Email:
+  = @pilot.email
+p
+  strong Certification type:
+  = @pilot.certification_type
+
+=> link_to 'Edit', edit_pilot_path(@pilot)
+'|
+=< link_to 'Back', pilots_path

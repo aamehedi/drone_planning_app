@@ -1,0 +1,27 @@
+h1 Listing pilots
+
+table
+  thead
+    tr
+      th First name
+      th Last name
+      th Email
+      th Certification type
+      th
+      th
+      th
+
+  tbody
+    - @pilots.each do |pilot|
+      tr
+        td = pilot.first_name
+        td = pilot.last_name
+        td = pilot.email
+        td = pilot.certification_type
+        td = link_to 'Show', pilot
+        td = link_to 'Edit', edit_pilot_path(pilot)
+        td = link_to 'Destroy', pilot, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Pilot', new_pilot_path
