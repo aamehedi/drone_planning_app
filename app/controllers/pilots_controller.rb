@@ -45,12 +45,13 @@ class PilotsController < ApplicationController
   end
 
   private
-    def set_pilot
-      @pilot = Pilot.find(params[:id])
-    end
 
-    def pilot_params
-      params.require(:pilot)
-        .permit(:first_name, :last_name, :email, :certification_type)
-    end
+  def set_pilot
+    @pilot = Pilot.find(params[:id])
+  end
+
+  def pilot_params
+    params.require(:pilot)
+      .permit(:first_name, :last_name, :email, :certification_type)
+  end
 end
