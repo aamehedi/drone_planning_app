@@ -1,0 +1,21 @@
+= form_for @pilot do |f|
+  - if @pilot.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@pilot.errors.count, "error")} prohibited this pilot from being saved:"
+      ul
+        - @pilot.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :first_name
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :certification_type
+    = f.text_field :certification_type
+  .actions = f.submit
