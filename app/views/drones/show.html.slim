@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Nickname:
+  = @drone.nickname
+p
+  strong Make and model:
+  = @drone.make_and_model
+p
+  strong Serial number:
+  = @drone.serial_number
+p
+  strong Manufactured year:
+  = @drone.manufactured_year
+
+=> link_to 'Edit', edit_drone_path(@drone)
+'|
+=< link_to 'Back', drones_path

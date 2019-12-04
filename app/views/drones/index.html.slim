@@ -1,0 +1,27 @@
+h1 Listing drones
+
+table
+  thead
+    tr
+      th Nickname
+      th Make and model
+      th Serial number
+      th Manufactured year
+      th
+      th
+      th
+
+  tbody
+    - @drones.each do |drone|
+      tr
+        td = drone.nickname
+        td = drone.make_and_model
+        td = drone.serial_number
+        td = drone.manufactured_year
+        td = link_to 'Show', drone
+        td = link_to 'Edit', edit_drone_path(drone)
+        td = link_to 'Destroy', drone, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Drone', new_drone_path
