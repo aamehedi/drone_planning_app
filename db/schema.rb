@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_000133) do
+ActiveRecord::Schema.define(version: 2019_12_05_005424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 2019_12_05_000133) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "forecasts", force: :cascade do |t|
+    t.string "postal_code"
+    t.date "valid_date"
+    t.text "data"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "mission_drones", force: :cascade do |t|
     t.bigint "mission_id"
     t.bigint "drone_id", null: false
@@ -31,6 +39,15 @@ ActiveRecord::Schema.define(version: 2019_12_05_000133) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["drone_id"], name: "index_mission_drones_on_drone_id"
     t.index ["mission_id"], name: "index_mission_drones_on_mission_id"
+  end
+
+  create_table "mission_forecasts", force: :cascade do |t|
+    t.bigint "mission_id", null: false
+    t.bigint "forecast_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["forecast_id"], name: "index_mission_forecasts_on_forecast_id"
+    t.index ["mission_id"], name: "index_mission_forecasts_on_mission_id"
   end
 
   create_table "mission_pilots", force: :cascade do |t|
@@ -62,5 +79,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_000133) do
   end
 
   add_foreign_key "mission_drones", "drones"
+  add_foreign_key "mission_forecasts", "forecasts"
+  add_foreign_key "mission_forecasts", "missions"
   add_foreign_key "mission_pilots", "pilots"
 end

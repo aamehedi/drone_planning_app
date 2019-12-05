@@ -30,4 +30,46 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  missions:
+    forecast:
+      on_date: On %{valid_date}
+      ts: Forecast period start unix timestamp (UTC).
+      valid_date: Date the forecast is valid for in format YYYY-MM-DD. [Midnight to midnight local time]
+      wind_gust_spd: Wind gust speed (Default m/s).
+      wind_spd: Wind speed (Default m/s).
+      wind_dir: Wind direction (degrees).
+      wind_cdir: Abbreviated wind direction.
+      wind_cdir_full: Verbal wind direction.
+      temp: Average Temperature (default Celcius).
+      max_temp: Maximum Temperature (default Celcius).
+      min_temp: Minimum Temperature (default Celcius).
+      high_temp: High Temperature - Calculated from 6AM to 6AM local time (default Celcius).
+      low_temp: Low Temperature - Calculated from 6AM to 6AM local (default Celcius).
+      app_max_temp: Apparent/"Feels Like" temperature at max_temp time (default Celcius).
+      app_min_temp: Apparent/"Feels Like" temperature at min_temp time (default Celcius).
+      pop: Probability of Precipitation (%).
+      precip: Accumulated liquid equivalent precipitation (default mm).
+      snow: Accumulated snowfall (default mm).
+      snow_depth: Snow Depth (default mm).
+      pres: Average pressure (mb).
+      slp: Average sea level pressure (mb).
+      dewpt: Average dew point (default Celcius).
+      rh: Average relative humidity (%).
+      weather: Weather
+      clouds_low: Low-level (~0-3km AGL) cloud coverage (%).
+      clouds_mid: Mid-level (~3-5km AGL) cloud coverage (%).
+      clouds_hi: High-level (>5km AGL) cloud coverage (%).
+      clouds: Average total cloud coverage (%).
+      vis: Visibility (default KM).
+      max_dhi: Maximum direct component of solar radiation (W/m^2).
+      uv: Maximum UV Index (0-11+).
+      ozone: Average Ozone (Dobson units).
+      moon_phase: Moon phase fraction (0-1).
+      moonrise_ts: Moonrise time unix timestamp (UTC).
+      moonset_ts: Moonset time unix timestamp (UTC).
+      sunrise_ts: Sunrise time unix timestamp (UTC).
+      sunset_ts: Sunset time unix timestamp (UTC).
+      key: Key
+      value: Value
+    form:
+      location_placeholder: Please enter postal code only

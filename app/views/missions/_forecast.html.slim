@@ -1,0 +1,9 @@
+- if forecast.data
+  h4 = t('.on_date', valid_date: forecast.valid_date)
+  table
+    th = t('.key')
+    th = t('.value')
+    - string_to_hash(forecast.data).each do |key, value|
+      tr
+        td = t(".#{key}")
+        td = t(".#{value}")
