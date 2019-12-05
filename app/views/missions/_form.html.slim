@@ -6,4 +6,26 @@
         - @mission.errors.full_messages.each do |message|
           li = message
 
+
+  .field
+    = f.label :start_date
+    = f.date_select :start_date
+  .field
+    = f.label :end_date
+    = f.date_select :end_date
+  .field
+    = f.label :location
+    = f.text_field :location
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :details
+    = f.text_area :details
+  .field
+    = f.label :pilots
+    = f.collection_check_boxes :pilot_ids, Pilot.all, :id, :last_name
+  .field
+    = f.label :drones
+    = f.collection_check_boxes :drone_ids, Drone.all, :id, :nickname
   .actions = f.submit
