@@ -1,0 +1,3 @@
+update_forecast_daily:
+  cron: '0 0 * * *'
+  class: 'UpdateForecastDailyJob'
