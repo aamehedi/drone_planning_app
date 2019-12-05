@@ -16,6 +16,19 @@ class Mission < ApplicationRecord
   before_save :create_forecast_associations
   after_save :destroy_unlinked_forecasts
 
+  def overlaps?
+    common_mission_ids = Mission
+      .distinct
+      .includes(:pilots, :drones)
+      .where('pilots.id IN (?) or drones.id IN (?)', pilot_ids, drone_ids)
+      .ids
+    Mission
+      .where(id: common_mission_ids)
+      .includes(:forecasts)
+      .where(forecasts: { valid_date: start_date..end_date })
+      .count > 0
+  end
+
   private
 
   def create_forecast_associations
