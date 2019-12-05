@@ -13,6 +13,9 @@ class Mission < ApplicationRecord
   }
   validates :end_date, timeliness: { after: :start_date, type: :date }
 
+  scope :after_a_week, -> { where(start_date: Date.today + 7) }
+  scope :today, -> { where(start_date: Date.today) }
+
   before_save :create_forecast_associations
   after_save :destroy_unlinked_forecasts
 
