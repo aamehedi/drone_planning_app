@@ -3,6 +3,11 @@ h1 Listing missions
 table
   thead
     tr
+      th Start date
+      th End date
+      th Location
+      th Name
+      th Details
       th
       th
       th
@@ -10,6 +15,11 @@ table
   tbody
     - @missions.each do |mission|
       tr
+        td = mission.start_date
+        td = mission.end_date
+        td = mission.location
+        td = mission.name
+        td = mission.details
         td = link_to 'Show', mission
         td = link_to 'Edit', edit_mission_path(mission)
         td = link_to 'Destroy', mission, data: { confirm: 'Are you sure?' }, method: :delete
