@@ -15,6 +15,15 @@ p
 p
   strong Details:
   = @mission.details
+h3 Drones
+table
+  th = t('.nickname')
+  th = t('.make_and_model')
+  th = t('.serial_number')
+  th = t('.manufactured_year')
+  = render partial: 'missions/drone', collection: @drones
+h3 Weather Forecasts
+= render partial: 'missions/forecast', collection: @forecasts
 
 => link_to 'Edit', edit_mission_path(@mission)
 '|

@@ -8,6 +8,8 @@ class MissionsController < ApplicationController
 
   # GET /missions/1
   def show
+    @forecasts = @mission.forecasts
+    @drones = @mission.drones
   end
 
   # GET /missions/new
