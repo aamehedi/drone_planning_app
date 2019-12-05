@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Start date:
+  = @mission.start_date
+p
+  strong End date:
+  = @mission.end_date
+p
+  strong Location:
+  = @mission.location
+p
+  strong Name:
+  = @mission.name
+p
+  strong Details:
+  = @mission.details
+
+=> link_to 'Edit', edit_mission_path(@mission)
+'|
+=< link_to 'Back', missions_path
