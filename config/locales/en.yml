@@ -73,3 +73,8 @@ en:
       value: Value
     form:
       location_placeholder: Please enter postal code only
+  layouts:
+    application:
+      pilots: Pilots
+      drones: Drones
+      missions: Missions

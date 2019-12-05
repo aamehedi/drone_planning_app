@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'slim-rails', '~> 3.2'
 gem 'validates_timeliness', '~> 5.0.0.alpha3'
 gem 'faraday', '~> 0.17.1'
+gem 'sidekiq-cron', '~> 1.1'
 
 group :development, :test do
   gem 'pry', '~> 0.12.2'

@@ -8,4 +8,10 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
+    p
+      = link_to t('.pilots'), pilots_path
+    p
+      = link_to t('.drones'), drones_path
+    p
+      = link_to t('.missions'), missions_path
     = yield
